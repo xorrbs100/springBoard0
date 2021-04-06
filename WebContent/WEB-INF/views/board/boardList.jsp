@@ -42,7 +42,7 @@ if(session.getAttribute("ses")!=null){
 	userId=(String)session.getAttribute("ses");
 	userName=(String)session.getAttribute("name");
 }
-if(session.getAttribute("sessionId")!=null){
+if(session.getAttribute("sessionId")!=null){			//네이버 세션
 	userId=(String)session.getAttribute("sessionId");
 }
 %>

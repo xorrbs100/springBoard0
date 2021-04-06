@@ -111,15 +111,15 @@ public class UserController {
 			return "user/userLogin";
 			
 		}
+	//로그아웃
 	@RequestMapping(value="/user/userLogout.do", method=RequestMethod.GET)
 	public String userLogout(HttpSession session
 			)throws Exception{
 		session.invalidate();
-		return "user/userLogin";
+		return "redirect:/user/userLogin.do";
 	}
 	
-	
-	
+
 	/* NaverLoginBO */
 	private NaverLoginBO naverLoginBO;
 	private String apiResult = null;

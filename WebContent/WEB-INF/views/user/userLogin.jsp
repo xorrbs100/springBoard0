@@ -54,7 +54,7 @@
 </script>
 <form name="userLogin" action="/user/userLoginAction.do" method="post">
 <table align="center" border='1'>
-	<tr><a href="/user/userJoin.do">회원가입</a></tr>
+	
 	<tr>
 		<td width='100'>ID</td>
 		<td width='300'><input type="text" id="userId" name="userId"></td>
@@ -68,7 +68,7 @@
 </table>
 <center>
 		
-		
+		<a href="/user/userJoin.do">회원가입</a>
 		<br>
 		<!-- 네이버 로그인 창으로 이동 -->
 		<div id="naver_id_login" style="text-align:center"><a href="${url}">

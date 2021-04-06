@@ -55,9 +55,12 @@
 
 	String userId =null;
 	String userName=null;
-	if(session.getAttribute("ses")!=null){
+	if(session.getAttribute("ses")!=null){		//유저 아이디
 		userId=(String)session.getAttribute("ses");
 		userName=(String)session.getAttribute("name");
+	}
+	if(session.getAttribute("sessionId")!=null){		//네이버 로그인 아이디
+		userId=(String)session.getAttribute("sessionId");
 	}
 	if(userId == null){	//userID가 null 일때
 		PrintWriter script = response.getWriter();

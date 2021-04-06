@@ -54,7 +54,6 @@ public class BoardController {
 		
 		List<String> comType = boardService.comType(); 
 		List<String> comName= boardService.comName();
-		 
 		int page = 1;
 		int totalCnt = 0;
 		String [] chk = request.getParameterValues("chk");
@@ -76,7 +75,7 @@ public class BoardController {
 		
 		return "board/boardList";
 	}
-	//�ۻ�
+	
 	@RequestMapping(value = "/board/{boardType}/{boardNum}/boardView.do", method = RequestMethod.GET)
 	public String boardView(Locale locale, Model model
 			,@PathVariable("boardType")String boardType
@@ -96,13 +95,12 @@ public class BoardController {
 	public String boardWrite(Locale locale, Model model, HttpServletRequest req) throws Exception{
 		HttpSession session=req.getSession();
 		if(session==null) {
-			return "user/userLogin";
+			return "redirect:/user/userLogin.do";
 		}
 		List<String> comType = boardService.comType(); 
 		List<String> comName= boardService.comName();
 		model.addAttribute("comType", comType);
 		model.addAttribute("comName", comName);
-		
 		return "board/boardWrite";
 	}
 	
@@ -141,7 +139,7 @@ public class BoardController {
 		  return "board/boardUpdate";
 	  }
 	 
-	//�Խñ� ����
+	
 		@RequestMapping(value = "/board/boardUpdateAction.do", method = RequestMethod.POST)
 		@ResponseBody
 		public String boardUpdateAction(Locale locale,BoardVo boardVo) throws Exception{
@@ -160,7 +158,7 @@ public class BoardController {
 			return callbackMsg;
 		}
 	
-	//�Խñ� ����
+	
 	@RequestMapping(value = "/board/{boardNum}/{boardType}/boardDelete.do", method = RequestMethod.GET)
 	public String boardDelete( 
 			@PathVariable("boardNum") int boardNum,
